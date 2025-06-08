@@ -1,5 +1,5 @@
 
-const socket = io("https://hortlakli-koy.onrender.com");
+const socket = io("https://backend3-3064.onrender.com");
 
 const loginScreen = document.getElementById("login-screen");
 const lobbyScreen = document.getElementById("lobby-screen");
