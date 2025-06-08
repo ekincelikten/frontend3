@@ -103,3 +103,16 @@ function showLobby(title) {
   lobbyScreen.style.display = "block";
   lobbyTitle.textContent = title;
 }
+
+
+
+const confirmBtn = document.getElementById("confirm-nickname");
+
+confirmBtn.onclick = () => {
+  if (!nicknameInput.value.trim()) {
+    alert("Takma ad gerekli");
+    return;
+  }
+  loginScreen.style.display = "none";
+  lobbyOptions.style.display = "block";
+};
