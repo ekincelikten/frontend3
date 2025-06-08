@@ -35,20 +35,6 @@
 
   <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
   <script src="script.js"></script>
-  <script>
-    const nicknameInput = document.getElementById("nickname");
-    const confirmBtn = document.getElementById("confirm-nickname");
-    const loginScreen = document.getElementById("login-screen");
-    const lobbyOptions = document.getElementById("lobby-options");
 
-    confirmBtn.onclick = () => {
-      if (!nicknameInput.value.trim()) {
-        alert("Takma ad gerekli");
-        return;
-      }
-      loginScreen.style.display = "none";
-      lobbyOptions.style.display = "block";
-    };
-  </script>
 </body>
 </html>
