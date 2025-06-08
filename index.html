@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hortlaklı Köy</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="login-screen">
+    <h1>Hortlaklı Köy</h1>
+    <input id="nickname" placeholder="Takma adınızı girin" />
+    <button id="confirm-nickname">Devam Et</button>
+  </div>
+
+  <div id="lobby-options" style="display:none;">
+    <input id="lobby-name" placeholder="Lobi adı (isteğe bağlı)" />
+    <button id="create-lobby">Lobi Oluştur</button>
+    <input id="join-lobby-id" placeholder="Lobi ID ile katıl" />
+    <button id="join-lobby">Lobiye Katıl</button>
+  </div>
+
+  <div id="lobby-screen" style="display:none;">
+    <h2 id="lobby-title"></h2>
+    <div id="player-list"></div>
+    <button id="start-game" style="display:none;">Oyunu Başlat</button>
+  </div>
+
+  <div id="game-screen" style="display:none;">
+    <h2>Oyun Başladı</h2>
+    <p id="your-role"></p>
+    <div id="game-players"></div>
+  </div>
+
+  <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+  <script src="script.js"></script>
+  <script>
+    const nicknameInput = document.getElementById("nickname");
+    const confirmBtn = document.getElementById("confirm-nickname");
+    const loginScreen = document.getElementById("login-screen");
+    const lobbyOptions = document.getElementById("lobby-options");
+
+    confirmBtn.onclick = () => {
+      if (!nicknameInput.value.trim()) {
+        alert("Takma ad gerekli");
+        return;
+      }
+      loginScreen.style.display = "none";
+      lobbyOptions.style.display = "block";
+    };
+  </script>
+</body>
+</html>
